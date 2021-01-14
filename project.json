@@ -1,0 +1,10 @@
+{
+    "name": "auto-hi",
+    "main": "main.js",
+    "ignore": [
+        "build"
+    ],
+    "packageName": "com.auto-hi",
+    "versionName": "1.0.0",
+    "versionCode": 1
+}

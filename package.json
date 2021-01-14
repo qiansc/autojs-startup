@@ -1,0 +1,76 @@
+{
+  "name": "auto-hi",
+  "version": "0.0.1",
+  "description": "autojs for hi",
+  "main": "script/index.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "lint": "eslint 'src/**/*.js'",
+    "check": "npm run test && npm run lint",
+    "unit": "jest test/unit",
+    "e2e": "jest test/e2e",
+    "test": "jest test",
+    "coveralls": "jest --coverage && cat coverage/lcov.info | coveralls",
+    "coverage": "jest --coverage",
+    "version": "npm run build && npm run docs",
+    "semantic-release": "semantic-release"
+  },
+  "author": "qiansc",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-syntax-bigint": "^7.7.4",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "@jest/transform": "^24.9.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.8",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-jest": "^24.9.0",
+    "coveralls": "^3.0.7",
+    "eslint": "^5.12.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jest": "^23.0.3",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.9.0",
+    "jest-extended": "^0.11.2",
+    "md5": "^2.2.1",
+    "semantic-release": "^17.2.3",
+    "chalk": "^4.0.0",
+    "extglob": "^3.0.0",
+    "is-glob": "^4.0.1",
+    "lodash": "^4.17.15",
+    "memory-fs": "^0.5.0",
+    "treeify": "^1.1.0",
+    "yargs": "^14.2.0"
+  },
+  "dependencies": {},
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "pacakge.json",
+            "docs",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  }
+}
