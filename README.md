@@ -1,2 +1,2 @@
-# auto-dc
-autojs for dc
+# About
+Autojs Startup Project
