@@ -1,18 +1,5 @@
 const { dateFormat } = require("./util");
 
-var img;
-
-
-function startCapScreen() {
-    if(!requestScreenCapture()){
-        toast('请求截图失败');
-        exit();
-    }
-    setInterval(function() {
-        img = captureScreen();
-    }, 5);
-}
-
 const messageTarget = "运营FE小组"; // "文件互传助手";
 
 function sendHiMessage() {
